@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class HeroService {
-  constructor (
+  constructor(
     private http: Http
   ) {}
 
@@ -28,6 +28,14 @@ export class HeroService {
 
   getUser() {
     return this.http.get(`https://conduit.productionready.io/api/profiles/eric`).map((res: Response) => res.json());
+  }
+
+  getItems() {
+    return this.http.get(`http://127.0.0.1:8080/tm/api/item/1/0/10000000000000`).map((res: Response) => res.json());
+  }
+
+  addItem(form) {
+    return this.http.post(`http://127.0.0.1:8080/tm/api/item`, form);
   }
 
 }

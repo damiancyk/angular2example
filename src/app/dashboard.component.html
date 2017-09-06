@@ -1,10 +1,37 @@
 <h3>Top Heroes</h3>
 <div class="grid grid-pad">
-  <a *ngFor="let hero of heroes"  [routerLink]="['/detail', hero.id]"  class="col-1-4">
-    <div class="module hero">
-      <h4>{{hero.name}}</h4>
-    </div>
-  </a>
+	<a *ngFor="let hero of heroes" [routerLink]="['/detail', hero.id]"
+		class="col-1-4">
+		<div class="module hero">
+			<h4>{{hero.name}}</h4>
+		</div>
+	</a>
 </div>
 
- <img [src]="user.profile.image">
+<hr>
+<button (click)="addItem(form)">dodaj notatke</button>
+<div class="grid grid-pad">
+	<a *ngFor="let row of items"
+		class="col-1-4">
+		<div class="module hero">
+			<table border="1">
+				<tr>
+					<td>id</td>
+					<td>{{row.id}}</td>
+				</tr>
+				<tr>
+					<td>title</td>
+					<td>{{row.title}}</td>
+				</tr>
+				<tr>
+					<td>description</td>
+					<td>{{row.description}}</td>
+				</tr>
+				<tr>
+					<td>startDay</td>
+					<td>{{row.startDay}}</td>
+				</tr>
+			</table>
+		</div>
+	</a>
+</div>
